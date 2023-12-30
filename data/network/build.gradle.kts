@@ -6,6 +6,7 @@ plugins {
     alias(libs.plugins.hilt)
     alias(libs.plugins.kotlin.serialization)
     id("kotlin-kapt")
+    id("kotlinx-serialization")
 }
 
 android {
@@ -45,6 +46,8 @@ dependencies {
     androidTestImplementation(libs.ui.test.junit4)
 
     implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.gson.convertor)
+    implementation(libs.gson)
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
 
