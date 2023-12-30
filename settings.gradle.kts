@@ -15,4 +15,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "FullFunctionalApp"
 include(":app")
- 
+include(":data")
+
+include(":data:network")
+include(":data:mylibrary")
