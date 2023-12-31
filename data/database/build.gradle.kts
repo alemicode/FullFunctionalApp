@@ -1,17 +1,17 @@
-
 @Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
     alias(libs.plugins.com.android.library)
     alias(libs.plugins.org.jetbrains.kotlin.android)
     alias(libs.plugins.hilt)
     alias(libs.plugins.kotlin.serialization)
+//    alias(libs.plugins.ksp)
     alias(libs.plugins.kapt)
 
 }
 
 android {
-    namespace = "com.alemicode.network"
-    compileSdk = 33
+    namespace = "com.alemicode.database"
+    compileSdk = 34
 
     defaultConfig {
         minSdk = 24
@@ -40,18 +40,23 @@ android {
 
 dependencies {
 
+    implementation(project(":data:model"))
 
+    // Test
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.ui.test.junit4)
 
-    implementation(libs.kotlinx.coroutines.android)
-    implementation(libs.gson.convertor)
-    implementation(libs.gson)
+    // Room
+    implementation(libs.room.ktx)
+    implementation(libs.room.runtime)
+    annotationProcessor(libs.room.compiler)
+    kapt(libs.room.compiler)
+//    ksp(libs.room.compiler)
+
+    // Hilt
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
+    kapt(libs.kotlinx.coroutines.core)
 
-    implementation(libs.kotlinx.serialization.json)
-    implementation(libs.retrofit.core)
-    implementation(libs.retrofit.kotlin.serialization)
 }

@@ -43,7 +43,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.3"
+        kotlinCompilerExtensionVersion = "1.5.6"
     }
     packaging {
         resources {
@@ -53,8 +53,9 @@ android {
 }
 
 dependencies {
-    implementation(project(mapOf("path" to ":data:network")))
-    testImplementation(project(":data:network"))
+
+    implementation(project(":data:network"))
+    implementation(project(":data:database"))
 
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)

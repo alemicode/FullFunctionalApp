@@ -8,7 +8,7 @@ data class CommentsDto(
 	val total: Int,
 
 	@field:SerializedName("comments")
-	val comments: List<CommentsItem>,
+	val comments: List<CommentsItemDto>,
 
 	@field:SerializedName("limit")
 	val limit: Int,
@@ -17,7 +17,7 @@ data class CommentsDto(
 	val skip: Int
 )
 
-data class CommentsItem(
+data class CommentsItemDto(
 
 	@field:SerializedName("id")
 	val id: Int,
@@ -29,10 +29,10 @@ data class CommentsItem(
 	val body: String,
 
 	@field:SerializedName("user")
-	val user: User
+	val userDto: UserDto
 )
 
-data class User(
+data class UserDto(
 
 	@field:SerializedName("id")
 	val id: Int,

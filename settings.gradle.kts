@@ -19,3 +19,5 @@ include(":data")
 
 include(":data:network")
 include(":data:mylibrary")
+include(":data:database")
+include(":data:model")
