@@ -4,21 +4,36 @@ import com.google.gson.annotations.SerializedName
 
 data class PostsDto(
 
-	@field:SerializedName("PostsDto")
-	val postsDto: List<PostsDtoItem?>? = null
+	@field:SerializedName("total")
+	val total: Int,
+
+	@field:SerializedName("limit")
+	val limit: Int,
+
+	@field:SerializedName("skip")
+	val skip: Int,
+
+	@field:SerializedName("posts")
+	val posts: List<PostsItem>
 )
 
-data class PostsDtoItem(
+data class PostsItem(
+
+	@field:SerializedName("reactions")
+	val reactions: Int,
 
 	@field:SerializedName("id")
-	val id: Int? = null,
+	val id: Int,
 
 	@field:SerializedName("title")
-	val title: String? = null,
+	val title: String,
 
 	@field:SerializedName("body")
-	val body: String? = null,
+	val body: String,
 
 	@field:SerializedName("userId")
-	val userId: Int? = null
+	val userId: Int,
+
+	@field:SerializedName("tags")
+	val tags: List<String>
 )

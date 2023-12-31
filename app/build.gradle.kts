@@ -2,17 +2,18 @@
 plugins {
     alias(libs.plugins.com.android.application)
     alias(libs.plugins.org.jetbrains.kotlin.android)
-
+    alias(libs.plugins.hilt)
+    id("kotlin-kapt")
 }
 
 android {
     namespace = "com.alemicode.fullfunctionalapp"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.alemicode.fullfunctionalapp"
-        minSdk = 24
-        targetSdk = 33
+        minSdk = 31
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -32,11 +33,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
     buildFeatures {
         compose = true
@@ -52,6 +53,8 @@ android {
 }
 
 dependencies {
+    implementation(project(mapOf("path" to ":data:network")))
+    testImplementation(project(":data:network"))
 
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)
@@ -68,4 +71,11 @@ dependencies {
     androidTestImplementation(libs.ui.test.junit4)
     debugImplementation(libs.ui.tooling)
     debugImplementation(libs.ui.test.manifest)
+
+
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+
+    implementation(libs.retrofit.core)
+    implementation(libs.retrofit.kotlin.serialization)
 }

@@ -4,72 +4,168 @@ import com.google.gson.annotations.SerializedName
 
 data class UsersDto(
 
-	@field:SerializedName("UsersDto")
-	val usersDto: List<UsersDtoItem?>? = null
+	@field:SerializedName("total")
+	val total: Int,
+
+	@field:SerializedName("limit")
+	val limit: Int,
+
+	@field:SerializedName("skip")
+	val skip: Int,
+
+	@field:SerializedName("users")
+	val users: List<UsersItem>
 )
 
-data class Geo(
+data class Bank(
 
-	@field:SerializedName("lng")
-	val lng: String? = null,
+	@field:SerializedName("iban")
+	val iban: String,
 
-	@field:SerializedName("lat")
-	val lat: String? = null
+	@field:SerializedName("cardExpire")
+	val cardExpire: String,
+
+	@field:SerializedName("cardType")
+	val cardType: String,
+
+	@field:SerializedName("currency")
+	val currency: String,
+
+	@field:SerializedName("cardNumber")
+	val cardNumber: String
 )
 
 data class Company(
 
-	@field:SerializedName("bs")
-	val bs: String? = null,
+    @field:SerializedName("address")
+	val address: Address,
 
-	@field:SerializedName("catchPhrase")
-	val catchPhrase: String? = null,
+    @field:SerializedName("name")
+	val name: String,
 
-	@field:SerializedName("name")
-	val name: String? = null
+    @field:SerializedName("department")
+	val department: String,
+
+    @field:SerializedName("title")
+	val title: String
 )
 
-data class UsersDtoItem(
+data class UsersItem(
 
-	@field:SerializedName("website")
-	val website: String? = null,
+    @field:SerializedName("lastName")
+	val lastName: String,
 
-	@field:SerializedName("address")
-	val address: Address? = null,
+    @field:SerializedName("gender")
+	val gender: String,
 
-	@field:SerializedName("phone")
-	val phone: String? = null,
+    @field:SerializedName("university")
+	val university: String,
 
-	@field:SerializedName("name")
-	val name: String? = null,
+    @field:SerializedName("maidenName")
+	val maidenName: String,
 
-	@field:SerializedName("company")
-	val company: Company? = null,
+    @field:SerializedName("ein")
+	val ein: String,
 
-	@field:SerializedName("id")
-	val id: Int? = null,
+    @field:SerializedName("ssn")
+	val ssn: String,
 
-	@field:SerializedName("email")
-	val email: String? = null,
+    @field:SerializedName("bloodGroup")
+	val bloodGroup: String,
 
-	@field:SerializedName("username")
-	val username: String? = null
+    @field:SerializedName("password")
+	val password: String,
+
+    @field:SerializedName("hair")
+	val hair: Hair,
+
+    @field:SerializedName("bank")
+	val bank: Bank,
+
+    @field:SerializedName("eyeColor")
+	val eyeColor: String,
+
+    @field:SerializedName("company")
+	val company: Company,
+
+    @field:SerializedName("id")
+	val id: Int,
+
+    @field:SerializedName("email")
+	val email: String,
+
+    @field:SerializedName("height")
+	val height: Int,
+
+    @field:SerializedName("image")
+	val image: String,
+
+    @field:SerializedName("address")
+	val address: Address,
+
+    @field:SerializedName("ip")
+	val ip: String,
+
+    @field:SerializedName("weight")
+	val weight: Any,
+
+    @field:SerializedName("userAgent")
+	val userAgent: String,
+
+    @field:SerializedName("birthDate")
+	val birthDate: String,
+
+    @field:SerializedName("firstName")
+	val firstName: String,
+
+    @field:SerializedName("macAddress")
+	val macAddress: String,
+
+    @field:SerializedName("phone")
+	val phone: String,
+
+    @field:SerializedName("domain")
+	val domain: String,
+
+    @field:SerializedName("age")
+	val age: Int,
+
+    @field:SerializedName("username")
+	val username: String
+)
+
+data class Hair(
+
+	@field:SerializedName("color")
+	val color: String,
+
+	@field:SerializedName("type")
+	val type: String
 )
 
 data class Address(
 
-	@field:SerializedName("zipcode")
-	val zipcode: String? = null,
+    @field:SerializedName("address")
+	val address: String,
 
-	@field:SerializedName("geo")
-	val geo: Geo? = null,
+    @field:SerializedName("city")
+	val city: String,
 
-	@field:SerializedName("suite")
-	val suite: String? = null,
+    @field:SerializedName("postalCode")
+	val postalCode: String,
 
-	@field:SerializedName("city")
-	val city: String? = null,
+    @field:SerializedName("coordinates")
+	val coordinates: Coordinates,
 
-	@field:SerializedName("street")
-	val street: String? = null
+    @field:SerializedName("state")
+	val state: String
+)
+
+data class Coordinates(
+
+	@field:SerializedName("lng")
+	val lng: Any,
+
+	@field:SerializedName("lat")
+	val lat: Any
 )
