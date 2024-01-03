@@ -2,6 +2,7 @@ package com.alemicode.database.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.alemicode.model.User
 
 
 /**
@@ -19,4 +20,15 @@ data class UserEntity(
     val email: String,
     val image: String,
     val age: Int,
-    )
+)
+
+fun UserEntity.asExternalModel() = User(
+    id = id,
+    firstName = firstName,
+    lastName = lastName,
+    gender = gender,
+    university = university,
+    email = email,
+    image = image,
+    age = age,
+)
