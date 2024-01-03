@@ -9,5 +9,5 @@ data class PostAndComments(
         parentColumn = "id",
         entityColumn = "postId"
     )
-    val director: List<CommentsEntity>
+    val comments: List<CommentsEntity>
 )

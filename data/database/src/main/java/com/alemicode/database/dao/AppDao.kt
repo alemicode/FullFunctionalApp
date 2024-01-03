@@ -16,17 +16,21 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface AppDao {
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun insetUsers(usersEntity: UserEntity)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insetUsers(usersEntity: List<UserEntity>)
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun insertPosts(postsEntity: PostsEntity)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertPosts(postsEntity: List<PostsEntity>)
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun insertComments(commentsEntity: CommentsEntity)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertComments(commentsEntity: List<CommentsEntity>)
 
     @Query("SELECT * FROM user_table")
     fun getAllUsers(): Flow<List<UserEntity>>
+
+
+    @Query("SELECT * FROM posts_table")
+    fun getAllPosts(): Flow<List<PostsEntity>>
 
 
     @Transaction

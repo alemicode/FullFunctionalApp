@@ -9,5 +9,5 @@ data class UserAndPosts(
         parentColumn = "id",
         entityColumn = "userId"
     )
-    val director: List<PostsEntity>
+    val posts: List<PostsEntity>
 )

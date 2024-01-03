@@ -9,16 +9,16 @@ import javax.inject.Inject
 class RemoteDataSource @Inject constructor(private val apiService: RetrofitService) :
     NetworkDataSource {
 
-    override suspend fun getPosts(): Response<PostsDto> {
+    override suspend fun getPosts(): PostsDto {
         return apiService.getPosts()
     }
 
-    override suspend fun getUsers(): Response<UsersDto> {
+    override suspend fun getUsers(): UsersDto {
         return apiService.getUsers()
 
     }
 
-    override suspend fun getComments(): Response<CommentsDto> {
+    override suspend fun getComments(): CommentsDto {
         return apiService.getComments()
     }
 

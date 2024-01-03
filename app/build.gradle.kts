@@ -56,6 +56,7 @@ dependencies {
 
     implementation(project(":data:network"))
     implementation(project(":data:database"))
+    implementation(project(":data:data"))
 
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)

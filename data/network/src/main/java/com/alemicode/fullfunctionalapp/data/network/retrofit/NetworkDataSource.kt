@@ -9,10 +9,10 @@ import retrofit2.Response
  * Interface representing network calls
  */
 interface NetworkDataSource {
-    suspend fun getPosts(): Response<PostsDto>
+    suspend fun getPosts(): PostsDto
 
-    suspend fun getUsers(): Response<UsersDto>
+    suspend fun getUsers(): UsersDto
 
-    suspend fun getComments() : Response<CommentsDto>
+    suspend fun getComments() : CommentsDto
 
 }

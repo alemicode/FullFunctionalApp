@@ -14,10 +14,10 @@ data class UsersDto(
 	val skip: Int,
 
 	@field:SerializedName("users")
-	val users: List<UsersItem>
+	val users: List<UsersItemDto>
 )
 
-data class Bank(
+data class BankDto(
 
 	@field:SerializedName("iban")
 	val iban: String,
@@ -35,7 +35,7 @@ data class Bank(
 	val cardNumber: String
 )
 
-data class Company(
+data class CompanyDto(
 
     @field:SerializedName("address")
 	val address: Address,
@@ -50,87 +50,87 @@ data class Company(
 	val title: String
 )
 
-data class UsersItem(
+data class UsersItemDto(
 
-    @field:SerializedName("lastName")
+	@field:SerializedName("lastName")
 	val lastName: String,
 
-    @field:SerializedName("gender")
+	@field:SerializedName("gender")
 	val gender: String,
 
-    @field:SerializedName("university")
+	@field:SerializedName("university")
 	val university: String,
 
-    @field:SerializedName("maidenName")
+	@field:SerializedName("maidenName")
 	val maidenName: String,
 
-    @field:SerializedName("ein")
+	@field:SerializedName("ein")
 	val ein: String,
 
-    @field:SerializedName("ssn")
+	@field:SerializedName("ssn")
 	val ssn: String,
 
-    @field:SerializedName("bloodGroup")
+	@field:SerializedName("bloodGroup")
 	val bloodGroup: String,
 
-    @field:SerializedName("password")
+	@field:SerializedName("password")
 	val password: String,
 
-    @field:SerializedName("hair")
+	@field:SerializedName("hair")
 	val hair: Hair,
 
-    @field:SerializedName("bank")
-	val bank: Bank,
+	@field:SerializedName("bank")
+	val bankDto: BankDto,
 
-    @field:SerializedName("eyeColor")
+	@field:SerializedName("eyeColor")
 	val eyeColor: String,
 
-    @field:SerializedName("company")
-	val company: Company,
+	@field:SerializedName("company")
+	val companyDto: CompanyDto,
 
-    @field:SerializedName("id")
+	@field:SerializedName("id")
 	val id: Int,
 
-    @field:SerializedName("email")
+	@field:SerializedName("email")
 	val email: String,
 
-    @field:SerializedName("height")
+	@field:SerializedName("height")
 	val height: Int,
 
-    @field:SerializedName("image")
+	@field:SerializedName("image")
 	val image: String,
 
-    @field:SerializedName("address")
+	@field:SerializedName("address")
 	val address: Address,
 
-    @field:SerializedName("ip")
+	@field:SerializedName("ip")
 	val ip: String,
 
-    @field:SerializedName("weight")
+	@field:SerializedName("weight")
 	val weight: Any,
 
-    @field:SerializedName("userAgent")
+	@field:SerializedName("userAgent")
 	val userAgent: String,
 
-    @field:SerializedName("birthDate")
+	@field:SerializedName("birthDate")
 	val birthDate: String,
 
-    @field:SerializedName("firstName")
+	@field:SerializedName("firstName")
 	val firstName: String,
 
-    @field:SerializedName("macAddress")
+	@field:SerializedName("macAddress")
 	val macAddress: String,
 
-    @field:SerializedName("phone")
+	@field:SerializedName("phone")
 	val phone: String,
 
-    @field:SerializedName("domain")
+	@field:SerializedName("domain")
 	val domain: String,
 
-    @field:SerializedName("age")
+	@field:SerializedName("age")
 	val age: Int,
 
-    @field:SerializedName("username")
+	@field:SerializedName("username")
 	val username: String
 )
 

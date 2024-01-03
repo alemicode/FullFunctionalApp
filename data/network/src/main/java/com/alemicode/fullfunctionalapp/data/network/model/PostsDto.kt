@@ -14,10 +14,10 @@ data class PostsDto(
 	val skip: Int,
 
 	@field:SerializedName("posts")
-	val posts: List<PostsItem>
+	val posts: List<PostsItemDto>
 )
 
-data class PostsItem(
+data class PostsItemDto(
 
 	@field:SerializedName("reactions")
 	val reactions: Int,

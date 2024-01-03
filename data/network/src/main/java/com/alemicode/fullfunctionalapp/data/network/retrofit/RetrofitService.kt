@@ -11,12 +11,12 @@ import retrofit2.http.GET
  */
 interface RetrofitService {
     @GET(value = "posts")
-    suspend fun getPosts(): Response<PostsDto>
+    suspend fun getPosts(): PostsDto
 
     @GET(value = "users")
-    suspend fun getUsers(): Response<UsersDto>
+    suspend fun getUsers(): UsersDto
 
     @GET(value = "comments")
-    suspend fun getComments(): Response<CommentsDto>
+    suspend fun getComments(): CommentsDto
 
 }

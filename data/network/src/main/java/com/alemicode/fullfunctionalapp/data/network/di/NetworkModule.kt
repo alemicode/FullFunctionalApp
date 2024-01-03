@@ -1,6 +1,9 @@
 package com.alemicode.fullfunctionalapp.data.network.di
 
+import com.alemicode.fullfunctionalapp.data.network.retrofit.NetworkDataSource
+import com.alemicode.fullfunctionalapp.data.network.retrofit.RemoteDataSource
 import com.alemicode.fullfunctionalapp.data.network.retrofit.RetrofitService
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -48,6 +51,10 @@ interface NetworkModule {
         @Provides
         fun provideCurrencyService(retrofit: Retrofit): RetrofitService =
             retrofit.create(RetrofitService::class.java)
-
     }
+
+    @Binds
+    fun provideNetworkDataSource(
+        remoteDataSource: RemoteDataSource
+    ): NetworkDataSource
 }
