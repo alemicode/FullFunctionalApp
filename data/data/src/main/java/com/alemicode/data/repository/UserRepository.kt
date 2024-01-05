@@ -3,7 +3,9 @@ package com.alemicode.data.repository
 import com.alemicode.model.User
 import kotlinx.coroutines.flow.Flow
 
-interface UsersRepository {
+interface UserRepository {
 
-    suspend fun getUsers() : Flow<List<User>>
+    fun getUsers(): Flow<List<User>>
+
+    fun getUser(id: Int): Flow<User>
 }

@@ -23,7 +23,6 @@ class PostAndCommentsRepositoryImpl @Inject constructor(
             topicDao.insertPosts(postsList)
             topicDao.insertComments(commentsList)
         }
-
         return topicDao.getPostAndComments(postId)
     }
 }

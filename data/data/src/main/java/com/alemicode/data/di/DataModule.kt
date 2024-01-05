@@ -4,8 +4,8 @@ import com.alemicode.data.repository.PostAndCommentsRepository
 import com.alemicode.data.repository.PostAndCommentsRepositoryImpl
 import com.alemicode.data.repository.UserAndPostRepository
 import com.alemicode.data.repository.UserAndPostRepositoryImpl
-import com.alemicode.data.repository.UsersRepository
-import com.alemicode.data.repository.UsersRepositoryImpl
+import com.alemicode.data.repository.UserRepository
+import com.alemicode.data.repository.UserRepositoryImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -16,8 +16,8 @@ import dagger.hilt.components.SingletonComponent
 interface DataModule {
     @Binds
     fun provideUserRepository(
-        userRepositoryImpl: UsersRepositoryImpl
-    ): UsersRepository
+        userRepositoryImpl: UserRepositoryImpl
+    ): UserRepository
 
     @Binds
     fun providePostAndCommentsRepository(

@@ -28,6 +28,8 @@ interface AppDao {
     @Query("SELECT * FROM user_table")
     fun getAllUsers(): Flow<List<UserEntity>>
 
+    @Query("SELECT * FROM user_table WHERE id = :userId")
+    fun getUserById(userId: Int): Flow<UserEntity>
 
     @Query("SELECT * FROM posts_table")
     fun getAllPosts(): Flow<List<PostsEntity>>

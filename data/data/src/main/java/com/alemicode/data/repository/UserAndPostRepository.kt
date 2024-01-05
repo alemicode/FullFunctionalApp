@@ -1,10 +1,9 @@
 package com.alemicode.data.repository
 
-import com.alemicode.database.model.PostAndComments
-import com.alemicode.database.model.UserAndPosts
+import com.alemicode.model.User
 import kotlinx.coroutines.flow.Flow
 
 interface UserAndPostRepository {
-    suspend fun getUserAndPosts(userId: Int): Flow<UserAndPosts>
+    fun getUserAndPosts(userId: Int): Flow<User>
 
 }

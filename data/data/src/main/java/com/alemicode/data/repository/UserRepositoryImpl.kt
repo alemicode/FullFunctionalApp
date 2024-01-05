@@ -14,11 +14,11 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class UsersRepositoryImpl @Inject constructor(
+class UserRepositoryImpl @Inject constructor(
     private val topicDao: AppDao,
     private val network: NetworkDataSource,
-) : UsersRepository {
-    override suspend fun getUsers(): Flow<List<User>> {
+) : UserRepository {
+    override fun getUsers(): Flow<List<User>> {
         CoroutineScope(IO).launch {
             val usersList = network.getUsers().users.map(UsersItemDto::toEntity)
             topicDao.insetUsers(usersList)
@@ -27,5 +27,11 @@ class UsersRepositoryImpl @Inject constructor(
         return topicDao.getAllUsers().map {
             it.map(UserEntity::asExternalModel)
         }
+    }
+
+    override fun getUser(id: Int): Flow<User> {
+        return topicDao.getUserById(userId = id).map(
+            UserEntity::asExternalModel
+        )
     }
 }

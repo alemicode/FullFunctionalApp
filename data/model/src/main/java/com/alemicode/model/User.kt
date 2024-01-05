@@ -9,4 +9,5 @@ data class User(
     val email: String,
     val image: String,
     val age: Int,
-    )
+    val posts: List<Post>? = emptyList()
+)
